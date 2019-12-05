@@ -1,0 +1,345 @@
+page {
+    background: #fff;
+}
+
+.balance{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 45rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.balance .text{
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+
+.balance .num{
+    font-size: 32rpx;
+    color: #a53137;
+}
+
+.left-num {
+    display: flex;
+    width: 407rpx;
+    height: 110rpx;
+    margin: auto;
+    position: relative;
+}
+
+.left-num .img {
+    width: 407rpx;
+    height: 110rpx;
+}
+
+.left-num .num-wrap{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 76rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-num .num-wrap .text{
+    font-size: 28rpx;
+    color: #9d5c22;
+}
+
+.left-num .num-wrap .num{
+    font-size: 32rpx;
+    color: #a53137;
+    margin: 0 10rpx;
+}
+
+.card-module {
+    padding: 76rpx 64rpx 64rpx 64rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transform: translate3d(0, 0, 0);
+    margin: 0 45rpx 38rpx 45rpx;
+    height: 734rpx;
+    box-sizing: border-box;
+    background: url('http://lucky-icon.meiweiyuxian.com/flop/flop-bg.gif') no-repeat;
+    background-size: 658rpx 734rpx;
+}
+
+.card-module .wait-text{
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.card-module .card {
+    width: 162rpx;
+    height: 160rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-module .card.less-cards {
+    width: 250rpx;
+    height: 250rpx;
+}
+
+.card-module .card .card-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+}
+
+.card-module .card image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-module .card image .bingo-money{
+    position: absolute;
+    top: 34%;
+    z-index: 9;
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    color: #ff3456;
+}
+
+.card-module .card image .m-money{
+    top: 29%;
+    font-size: 26rpx;
+}
+
+.card-module .card .front {
+    /* background-color: red; */
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.card-module .card .back {
+    /* background-color: #009fff; */
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card-module .card.change .front {
+    z-index: 1;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+
+.card-module .card.change .back {
+    z-index: 2;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+}
+
+.card-module .card.change .opacity {
+    opacity: 0.5;
+}
+
+
+.box-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 45rpx;
+}
+
+.box-wrap .box{
+    width: 131rpx;
+    height: 167rpx;
+}
+
+.box-wrap .box .img{
+    width: 131rpx;
+    height: 167rpx;
+}
+
+.box-wrap .arrow{
+    width: 46rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-wrap .arrow .icon{
+    width: 10rpx;
+    height: 10rpx;
+    border-top: 4rpx solid #431e17;
+    border-right: 4rpx solid #431e17;
+    transform: rotate(45deg);
+}
+
+.reset{
+    height: 100rpx;
+    font-size: 28rpx;
+    font-weight: normal;
+    line-height: 100rpx;
+    margin: 30rpx 45rpx;
+    text-align: center;
+    background: #f1f1f1;
+    color: #111;
+    border-radius: 10rpx;
+}
+
+
+.black-mask {
+    width: 100%;
+    height: 2000rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #333;
+    opacity: 0.5;
+    z-index: 99;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.no-bingo-wrap{
+    width: 500rpx;
+    height: 600rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-bingo-wrap .img-wrap{
+    width: 160rpx;
+    height: 160rpx;
+    margin-bottom: 20rpx;
+}
+
+.no-bingo-wrap .img-wrap .img{
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.no-bingo-wrap .txt{
+    width: 100%;
+    line-height: 100rpx;
+    margin-bottom: 60rpx;
+    text-align: center;
+}
+
+.no-bingo-wrap .btn{
+    width: 400rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #fff;
+    border-radius: 10rpx;
+    background: #a53137;
+}
+
+.bingo-wrap{
+    width: 300px;
+    height: 396px;
+    position: relative;
+}
+
+.bingo-wrap .img-wrap{
+    width: 300px;
+    height: 396px;
+}
+
+.bingo-wrap .img-wrap .img{
+    width: 300px;
+    height: 396px;
+}
+
+.bingo-wrap .money-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    position: absolute;
+    top: 230rpx;
+    z-index: 99;
+}
+
+.bingo-wrap .money-wrap .title{
+    font-size: 30rpx;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+.bingo-wrap .money-wrap .money{
+    line-height: 100rpx;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+
+.bingo-wrap .money-wrap .money .label{
+    font-size: 32rpx;
+    color: #ff3456;
+    margin-right: 6rpx;
+}
+
+.bingo-wrap .money-wrap .money .num{
+    font-size: 60rpx;
+    font-weight: bold;
+    color: #ff3456;
+}
+
+
+.bingo-wrap .btn{
+    width: 100%;
+    font-size: 28rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #000;
+    position: absolute;
+    bottom: 100rpx;
+    text-align: center;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 45rpx;
+}
+
+.about .title{
+    font-size: 28rpx;
+    font-weight: 500;
+    margin-bottom: 20rpx;
+}
+
+.about .content{
+    font-size: 24rpx;
+    margin-bottom: 10rpx;
+}

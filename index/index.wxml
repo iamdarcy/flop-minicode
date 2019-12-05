@@ -1,0 +1,88 @@
+<wxs module="filters" src="../utils/fixed.wxs"></wxs>
+<view class="wrap">
+    <!-- <view class="left-num">
+        <image class="img" src="/images/icon/left-num.png"></image>
+        <view class="num-wrap">
+            <view class="text">您今天还有</view>
+            <view class="num">{{number}}</view>
+            <view class="text">个宝箱待开箱</view>
+        </view>
+    </view> -->
+    <view class="balance">
+        <view class="text">余额:</view>
+        <view class="num">{{filters.toFix(myMoney)}}元</view>
+    </view>
+    <view class="card-module">
+        <view class="wait-text" wx:if="{{opening == 0 && number > 0}}">点击下方的宝箱开始抽奖</view>
+        <view wx:if="{{opening == 1}}" class="card {{cardData.length > 4?'more-cards':'less-cards'}} {{ item.showClass ? 'change' : ''}} " wx:for="{{cardData}}" wx:key="{{item}}" animation="{{item.animationData}}" bindtap="{{canOpen==1?'handleCurClick':''}}"
+            data-disabled="{{ item.disabled }}" data-index="{{index}}" style="widht: {{carWidth}}; height: {{carWidth}}">
+            <view class="front card-item">
+                <image src="{{item.front}}"></image>
+            </view>
+            <view class="back card-item {{ item.opacity ? 'opacity' : ''}}">
+                <image src="{{item.back}}">
+                    <view class="bingo-money {{cardData.length > 4?'m-money':''}}" wx:if="{{bingoIndex == index}}">
+                       {{money}}
+                    </view>
+                </image>
+            </view>
+        </view>
+        <view class="wait-text" wx:if="{{opening == 0 && number == 0}}">今天的宝箱已全部打开，明天再来吧</view>
+    </view>
+    <view class="box-wrap">
+        <view class="box" data-btn='1' bindtap="{{oneFlopStatus == 0?'startFlop':''}}">
+            <image wx:if="{{oneFlopStatus == 0}}" class="img" src="/images/icon/a-box-close.png"></image>
+            <image wx:if="{{oneFlopStatus == 1}}" class="img" src="/images/icon/a-box-open.png"></image>
+        </view>
+        <view class="arrow">
+            <!-- <view class="icon"></view> -->
+        </view>
+        <view class="box" data-btn='2' bindtap="{{twoFlopStatus == 0?'startFlop':''}}">
+            <image wx:if="{{twoFlopStatus == 0}}" class="img" src="/images/icon/a-box-close.png"></image>
+            <image wx:if="{{twoFlopStatus == 1}}" class="img" src="/images/icon/a-box-open.png"></image>
+        </view>
+        <view class="arrow">
+            <!-- <view class="icon"></view> -->
+        </view>
+        <view class="box" data-btn='3' bindtap="{{threeFlopStatus == 0?'startFlop':''}}">
+            <image wx:if="{{threeFlopStatus == 0}}" class="img" src="/images/icon/a-box-close.png"></image>
+            <image wx:if="{{threeFlopStatus == 1}}" class="img" src="/images/icon/a-box-open.png"></image>
+        </view>
+        <view class="arrow">
+            <!-- <view class="icon"></view> -->
+        </view>
+        <view class="box" data-btn='4' bindtap="{{fourFlopStatus == 0?'startFlop':''}}">
+            <image wx:if="{{fourFlopStatus == 0}}" class="img" src="/images/icon/b-box-close.png"></image>
+            <image wx:if="{{fourFlopStatus == 1}}" class="img" src="/images/icon/b-box-open.png"></image>
+        </view>
+    </view>
+    <view wx:if="{{showDialog == 1}}" class='black-mask'></view>
+    <view wx:if="{{showDialog == 1}}" class='mask'>
+        <view class="no-bingo-wrap" wx:if="{{isBingo == 0}}">
+            <view class="img-wrap">
+                <image class="img" src="/images/icon/cry.png"></image>
+            </view>
+            <view class="txt">很遗憾，您未中奖</view>
+            <view class="btn" bindtap="flopOver">我知道了</view>
+        </view>
+        <view class="bingo-wrap" wx:if="{{isBingo == 1}}">
+            <view class="img-wrap">
+                <image class="img" src="/images/icon/coupon.png"></image>
+            </view>
+            <view class="money-wrap">
+                <view class="title">现金红包</view>
+                <view class="money">
+                    <view class="label">¥</view>
+                    <view class="num">{{money}}</view>
+                </view>
+            </view>
+            <view class="btn" bindtap="getMoney">开心收下</view>
+        </view>
+    </view>
+    <view class="reset" bindtap="reset">点击重置所有状态</view>
+    <view class="about">
+        <!-- <view class="title">关于</view> -->
+        <view class="content">作者：黑亮</view>
+        <view class="content">Github搜索hiolabs，有更多开源代码，也有我的联系方式，有问题可随时联系我。</view>
+    </view>
+</view>
