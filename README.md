@@ -28,3 +28,7 @@ getRealData: function(index, length) {
 #### 项目演示
 
 <img width="400" src="http://lucky-other.meiweiyuxian.com/github/flop-demo.gif"/>
+
+#### 项目地址
+
+https://github.com/iamdarcy/flop-minicode
